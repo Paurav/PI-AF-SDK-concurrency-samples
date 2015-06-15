@@ -361,6 +361,9 @@ The PI Web API development team plans to prototype and performance test a
 concurrent/exclusive pair-based approach to managing AF resources for possible
 inclusion in a future PI Web API release.
 
+*Update: as of June 2015, PI Web API's development branch has been converted
+to a `ConcurrentExclusiveSchedulerPair`-backed parallelization implementation.*
+
 #### References
  * [ConcurrentExclusiveSchedulerPair](https://msdn.microsoft.com/en-us/library/system.threading.tasks.concurrentexclusiveschedulerpair%28v=vs.110%29.aspx)
 
