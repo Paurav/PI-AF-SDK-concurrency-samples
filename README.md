@@ -173,10 +173,10 @@ In general, this approach solves the specific problems that we demonstrated
 in Cases 1 and 2. However, there is significant overhead to creating a
 new PISystems object and an independent cache. If you are building, for
 example, a web application, it would not be appropriate to instantiate
-a PISystems object for each request. Better approaches would combine
-techniques discussed further on to safely share PISystems instances
-between multiple, possibly concurrent requests. Another approach may be
-to pool PISystems instances.
+a PISystems object with a new independent cache for each request. Better
+approaches would combine techniques discussed further on to safely share
+PISystems instances between multiple, possibly concurrent requests. Another
+approach may be to pool PISystems instances.
 
 ### 6. AF Caching Defaults
 This case simply demonstrates the default properties of the AF Cache: that
