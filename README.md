@@ -215,12 +215,14 @@ parameters:
  own 'timer' for this purpose, and the timer is reset each time the object is
  retrieved.
 
-Tying into the .NET memory model is advantageous for the AF SDK. The use of strong
-references . Eventually converting to weak references allows for objects retrieved
-from the AF Server to be potentially reused between requests if garbage collection
-has not occurred, or if there is still a strong reference elsewhere in the program,
-sparing the expense of a round-trip to the AF server if these objects are still
-available in memory when they are needed again. The design also allows leaves
+Tying into the .NET memory model allows for the AF SDK to work without
+complicated configuration in many common use cases. Keeping strong references
+allows for repeatedly-used data, like PISystem, AFDatabase and UOM objects
+to remain in memory.  Eventually converting to weak references allows for
+objects retrieved from the AF Server to be reused for an even longer duration
+if garbage collection has not occurred, or if there is still a strong reference
+elsewhere in the program, sparing the expense of a round-trip to the AF server
+when these objects are still available in memory. The design also allows leaves
 decisions as to when space must be freed to the sophisticated garbage collection
 algorithm implemented in the .NET Framework.
 
